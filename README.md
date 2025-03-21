@@ -1,4 +1,4 @@
-# Important info about the scripts
+# Important information about the scripts
 
 These scripts were used to fit the FUNCOIN model and do all formal analysis for the manuscript "One-shot normative modelling of whole-brain functional connectivity".
 
