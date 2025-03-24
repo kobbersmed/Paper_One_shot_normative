@@ -32,7 +32,7 @@ def funcoin_simulation_singlerun(filename_temp, nullcase, n_time, n_subj, n_boot
         gamma_mat = fcn_inst.gamma
         beta_mat = fcn_inst.beta
         beta_mats_bootstrap = fcn_inst.betas_bootstrap
-        beta_mat_CI = fcn_inst.beta_CI
+        beta_mat_CI = fcn_inst.beta_CI_bootstrap
         dfd_values = fcn_inst.dfd_values_training
 
         var_names = ['gamma_mat', 'beta_mat', 'beta_mats_bootstrap', 'beta_mat_CI', 'X_sim', 'dfd_values']
@@ -51,7 +51,7 @@ def funcoin_simulate_data_paper(n_subj, n_time = 100, nullcase = False, seed=Non
         beta_mat = np.array([[5,4,1,-1,-2], [0,0,0,0,0]])
         lambdas_subj = np.array([rng.lognormal(beta_mat[0,:], 0.5) for i in range(n_subj)])
     else:
-        beta_mat = np.array([[5,4,1,-1,-2], [0,-1,1,0,0]])
+        beta_mat = np.array([[5,4,1,-1,-2], [0,-2,1,0,0]])
         lambdas_subj = np.array([np.exp(X_sim[i,:]@beta_mat) for i in range(n_subj)])
 
     p_model = beta_mat.shape[1]
